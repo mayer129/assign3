@@ -8,7 +8,7 @@ template <class T>
 class GenStack
 {
 public:
-  GenStack(int maxSize = 100);
+  GenStack(int maxSize = 128);
   ~GenStack();
 
   void push(T d);
@@ -43,7 +43,7 @@ void GenStack<T>::push(T d)
 {
   if (isFull())
   {
-    int newSize = size + 100;
+    int newSize = size * 2;
     T* temp = new T[newSize];
     for (int i = 0; i < size; ++i)
     {
